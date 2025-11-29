@@ -1,14 +1,19 @@
+import { useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
+import LifeCycleClass from './components/LifeCycleClass';
 import Welcome from './components/Welcome';
 
 function App() {
+  const [showLifeCycle, setShowLifeCycle] = useState(true);
+
   return (
     <div className="App">
-      <h1 id="message">Bonjour, Ali!</h1>
-      <Welcome name="Ali" />; 
+      <Welcome name="Ali" />
 
-      <Counter />
+     
+
+       <LifeCycleClass initialCount={5} />
     </div>
   );
 }
