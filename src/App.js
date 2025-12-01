@@ -5,6 +5,8 @@ import Contact from './components/Contact';
 import About from './components/About';
 import Home from './components/Home';
 import { BrowserRouter } from 'react-router-dom';
+import User from './components/User';
+import NotFound from './components/NotFound';
 
 function App() {
 
@@ -15,12 +17,16 @@ function App() {
           <Link to="/contact"> Contact </Link>
           <Link to="/about"> About </Link>
           <Link to="/home"> Home </Link>
+          <Link to="/user/1"> User 1 </Link>
+          <Link to="/user/2"> User 2 </Link>
        </ul>
       </nav> 
       <Routes>
        <Route path='contact' element={<Contact />} />
        <Route path='about' element={<About />} />
        <Route path='home' element={<Home />} /> 
+       <Route path='user/:id' element={ <User />} />
+       <Route path='*' element={ <NotFound />} />
       </Routes> 
     </div>
   );
