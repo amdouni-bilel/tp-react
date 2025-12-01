@@ -1,18 +1,27 @@
 import { useState } from 'react';
 import './App.css';
-import Counter from './components/Counter';
-import LifeCycleClass from './components/LifeCycleClass';
-import Welcome from './components/Welcome';
-import UseStateHooks from './components/UseStateHooks';
-import UseEffectHooks from './components/UseEffectHooks';
+import { Routes, Route, Link } from 'react-router-dom';
+import Contact from './components/Contact';
+import About from './components/About';
+import Home from './components/Home';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-  const [showLifeCycle, setShowLifeCycle] = useState(true);
 
   return (
     <div className="App">
-        <UseEffectHooks />
-
+      <nav>
+        <ul>
+          <Link to="/contact"> Contact </Link>
+          <Link to="/about"> About </Link>
+          <Link to="/home"> Home </Link>
+       </ul>
+      </nav> 
+      <Routes>
+       <Route path='contact' element={<Contact />} />
+       <Route path='about' element={<About />} />
+       <Route path='home' element={<Home />} /> 
+      </Routes> 
     </div>
   );
 }

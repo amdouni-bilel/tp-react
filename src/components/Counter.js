@@ -7,7 +7,7 @@ function Counter() {
 
   // Fonction pour incrémenter le compteur
   const increment = () => {
-    setCount(count + 1);  // Met à jour la valeur du state 'count'
+    setCount(count + 100);  // Met à jour la valeur du state 'count'
   };
 
   return (
